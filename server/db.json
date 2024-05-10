@@ -1,0 +1,24 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Home Screen",
+      "description": "Create a home screen"
+    },
+    {
+      "id": "2",
+      "title": "Landing Page",
+      "description": "Create a Landing Page"
+    },
+    {
+      "id": "79c1",
+      "title": "Login page",
+      "description": "Create a simple login page"
+    },
+    {
+      "id": "cf35",
+      "title": "Signup Page",
+      "description": "Create a signup page"
+    }
+  ]
+}

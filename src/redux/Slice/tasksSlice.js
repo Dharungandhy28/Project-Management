@@ -7,14 +7,14 @@ const initialState = {
   error: "",
 };
 
-const BASE_URL = "http://localhost:8000/tasks";
+// const BASE_URL = "http://localhost:8000/tasks";
 
 // Get
 
 export const getTaskFromServer = createAsyncThunk(
   "tasks/getTaskFromServer",
   async (_, { rejectWithValue }) => {
-    const response = await fetch(BASE_URL);
+    const response = await fetch("/");
     if (response.ok) {
       const jsonResponse = await response.json();
       return jsonResponse;
@@ -36,7 +36,7 @@ export const addTaskToServer = createAsyncThunk(
         "Content-type": "application/json; charset=UTF-8",
       },
     };
-    const response = await fetch(BASE_URL, options);
+    const response = await fetch("/", options);
     if (response.ok) {
       const jsonResponse = await response.json();
       return jsonResponse;
@@ -58,7 +58,7 @@ export const UpdateTaskInServer = createAsyncThunk(
         "Content-type": "application/json; charset=UTF-8",
       },
     };
-    const response = await fetch(BASE_URL + "/" + task.id, options);
+    const response = await fetch("/" + task.id, options);
     if (response.ok) {
       const jsonResponse = await response.json();
       return jsonResponse;
@@ -76,7 +76,7 @@ export const DeleteTaskFromServer = createAsyncThunk(
     const options = {
       method: "DELETE",
     };
-    const response = await fetch(BASE_URL + "/" + task.id, options);
+    const response = await fetch("/" + task.id, options);
     if (response.ok) {
       const jsonResponse = await response.json();
       return jsonResponse;
